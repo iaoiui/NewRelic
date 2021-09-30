@@ -10,7 +10,7 @@ Terraform sample to create IAM Role for New Relic AWS Integration.
 
 3. Select API Polling and then external id would be generated for IAM Role
 
-4. Initialize Terraform 
+4. Initialize Terraform
 
 ```
 terraform init
@@ -23,7 +23,11 @@ enter the external id which was generated previous step
 ```
 terraform apply
 var.externalID
-  Enter a value: 
+  Enter a value:
 ```
 
 6. walk through the guide which is shown in New Relic GUI
+
+7. You can see your AWS resources like below after 5 minutes
+
+[](./images/newrelic_installed.png)
