@@ -2,7 +2,7 @@
 
 Terraform sample to create IAM Role for New Relic AWS Integration.
 
-# Quickstart
+# Quickstart (AWS Integration)
 
 1. [Create New Relic Account](https://newrelic.com/signup)
 
@@ -30,4 +30,24 @@ var.externalID
 
 7. You can see your AWS resources like below after 5 minutes
 
-[](./images/newrelic_installed.png)
+![newrelic_installed](./images/newrelic_installed.png)
+
+# Quickstart Kubernetes
+
+1. Run the following command which is generated in Infrastructure > Kubernetes
+
+```
+helm repo add newrelic https://helm-charts.newrelic.com && helm repo update && \
+kubectl create namespace newrelic ; helm upgrade --install newrelic-bundle newrelic/nri-bundle \
+ --set global.licenseKey=XXXXXXXXXXXXXXXXXXXXXXXX \
+ --set global.cluster=kind \
+ --namespace=newrelic \
+ --set newrelic-infrastructure.privileged=true \
+ --set global.lowDataMode=true \
+ --set ksm.enabled=true \
+ --set prometheus.enabled=true \
+ --set kubeEvents.enabled=true \
+ --set logging.enabled=true
+```
+
+![kubernetes_integration](./images/kubernetes_integration.png)
