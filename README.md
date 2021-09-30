@@ -25,3 +25,5 @@ terraform apply
 var.externalID
   Enter a value: 
 ```
+
+6. walk through the guide which is shown in New Relic GUI
